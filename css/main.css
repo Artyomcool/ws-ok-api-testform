@@ -29,6 +29,11 @@
     background-color: #79a7c03b;
 }
 
+.island-title {
+    text-align: center;
+    font-weight: bold;
+}
+
 .actions {
     display: flex;
     justify-content: center;
