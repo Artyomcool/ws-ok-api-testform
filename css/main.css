@@ -1,0 +1,55 @@
+.ws-params {
+    float: left;
+    width: 33%;
+}
+
+.ws-param {
+    padding-bottom: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.ws-param > .ws-param-title {
+    width: 15%;
+}
+
+.ws-param > .ws-param-value-field {
+    width: 85%;
+    float: right;
+}
+
+.data-log {
+    float: right;
+    width: 60%;
+}
+
+.island {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #79a7c03b;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.log > textarea, input {
+    width: 99%;
+    margin: auto;
+}
+
+.vr {
+    border-left: 1px solid silver;
+    width: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+hr {
+    color: silver;
+}
+
+body {
+    background-color: #eadcdc38;
+}

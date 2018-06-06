@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script content="text/javascript" src="js/ws_client.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <title>OK API WS Test Form</title>
+    </head>
+
+    <body>
+        <div class="ws-params island">
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    API host:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="api-host" value="api.ok.ru">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    App ID:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="app-id">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    Public key:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="public-key">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    Secret key:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="secret-key">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    Login:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="user-login">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    Password:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="user-password">
+                </span>
+            </div>
+            <hr/>
+            <div class="actions">
+                <button type="submit" id="init-connection" onclick="initWs()">Init WS</button>
+                <span class="vr"></span>
+                <button type="submit" id="close-connection" onClick="closeConnect()">Close WS</button>
+            </div>
+        </div>
+
+        <div class="data-log island">
+            <div class="log">
+                <textarea id="chatlog" readonly rows="10"></textarea><br/>
+                <div class="ws-param">
+                    <span class="ws-param-title">
+                        Password:
+                    </span>
+                    <span class="ws-param-value-field">
+                        <input id="message" type="text">
+                    </span>
+                </div>
+            </div>
+            <hr/>
+            <div class="actions">
+                <button type="submit" id="sendButton" onClick="postToServer()">Send message</button>
+                <span class="vr"></span>
+                <button type="submit" id="flushLog" onClick="flushLog()">Flush</button>
+            </div>
+        </div>
+    </body>
+</html>
