@@ -16,10 +16,9 @@ function initWs() {
 
 function postToServer(){
     var messageToSend = document.getElementById("message").value;
-    console.log(WS);
     WS.send(messageToSend);
     document.getElementById("message").value = "";
-    console.log("sent message: " + messageToSend);
+    document.getElementById("chatlog").textContent += "Sent message:" + messageToSend + "\n";
 }
 
 function closeConnect(){
@@ -42,22 +41,20 @@ function login(userName, pwd) {
                 WS = new WebSocket(url);
 
                 WS.onopen = function(){
-                    document.getElementById("chatlog").textContent += "open\n";
+                    document.getElementById("chatlog").textContent += "Connection opened\n";
                 };
 
                 WS.onmessage = function(message){
-                    document.getElementById("chatlog").textContent += message.data + "\n";
-                    console.log("Got message: " + message.data);
+                    document.getElementById("chatlog").textContent += "Got response:" + message.data + "\n";
+                    console.log("Got response: " + message.data);
                 };
 
                 WS.onerror = function (event) {
-                    alert("Error " + event);
-                    console.log("error");
+                    document.getElementById("chatlog").textContent += "Got error:" + message.data + "\n";
                 };
 
                 WS.onclose = function (event) {
-                    alert("Session closed " + event.code + " : " + event.reason);
-                    console.log("close session");
+                    document.getElementById("chatlog").textContent += "Connection closed\n";
                 };
             },
             {no_session: true, app_secret_key: document.getElementById("secret-key").value}
