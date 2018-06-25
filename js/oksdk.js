@@ -63,22 +63,6 @@
             return;
         }
 
-        if (!params['api_server']) {
-            if ((hParams['access_token'] == null) && (hParams['error'] == null)) {
-                window.location = state.widgetServer + 'oauth/authorize' +
-                    '?client_id=' + args['app_id'] +
-                    '&scope=' + (args.oauth.scope || 'VALUABLE_ACCESS') +
-                    '&response_type=' + 'token' +
-                    '&redirect_uri=' + (args.oauth.url || window.location.href) +
-                    '&layout=' + (args.oauth.layout || 'a') +
-                    '&state=' + (args.oauth.state || '');
-                return;
-            }
-            if (hParams['error'] != null) {
-                sdk_failure('Error with OAUTH authorization: ' + hParams['error']);
-                return;
-            }
-        }
         sdk_success();
     }
 
