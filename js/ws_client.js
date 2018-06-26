@@ -10,7 +10,6 @@ function initWs() {
     }, function (error) {
         //on error
     });
-    OKSDK.OK_API_SERVER = "https://"+document.getElementById("api-host").value+"/";
     login(document.getElementById("user-login").value, document.getElementById("user-password").value);
 }
 
@@ -36,8 +35,8 @@ function login(userName, pwd) {
                 if (status !== 'ok') {
                     alert(OKSDK.Util.toString(error));
                 };
-                console.log(data['session_key']);
-                var url = "wss://"+document.getElementById("api-host").value+"/websocket/"+document.getElementById("public-key").value+"/"+data['session_key'];
+
+                var url = "ws" + getSslPrefix() + "://" + document.getElementById("api-host").value + "/websocket/" + document.getElementById("public-key").value+"/" + data['session_key'];
                 WS = new WebSocket(url);
 
                 WS.onopen = function(){
@@ -59,4 +58,11 @@ function login(userName, pwd) {
             },
             {no_session: true, app_secret_key: document.getElementById("secret-key").value}
     );
+}
+function getSslPrefix() {
+    if (document.getElementById("ssl-enabled").checked) {
+        return "s";
+    }
+
+    return "";
 }
