@@ -10,7 +10,7 @@ function initWs() {
     }, function (error) {
         //on error
     });
-    login(document.getElementById("user-login").value, document.getElementById("user-password").value, document.getElementById("session-key").value);
+    login(document.getElementById("user-login").value, document.getElementById("user-password").value, document.getElementById("session-key").value.trim());
 }
 
 function postToServer(){
@@ -35,7 +35,7 @@ function login(userName, pwd, sessionKey) {
                 var url = "ws" + getSslPrefix() + "://" + document.getElementById("api-host").value + "/websocket/" + document.getElementById("public-key").value;
 
                 if (document.getElementById("use_session").checked) {
-                    if (sessionKey.trim() !== "") {
+                    if (sessionKey.trim() !== "/") {
                         url += "/";
                     }
                     url += sessionKey;
