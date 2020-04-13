@@ -10,7 +10,7 @@ function initWs() {
     }, function (error) {
         //on error
     });
-    login(document.getElementById("user-login").value, document.getElementById("user-password").value, document.getElementById("session-key").value.trim());
+    login(document.getElementById("user-login").value, document.getElementById("user-password").value, document.getElementById("session-key").value);
 }
 
 function postToServer(){
