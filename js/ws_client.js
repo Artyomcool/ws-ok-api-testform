@@ -32,7 +32,7 @@ function login(userName, pwd, sessionKey) {
     OKSDK.REST.call("auth.login",
             {user_name: userName, password: pwd},
             function (status, data, error) {
-                var url = "ws" + getSslPrefix() + "://" + document.getElementById("api-host").value + "/websocket/" + document.getElementById("public-key").value+"/";
+                var url = "ws" + getSslPrefix() + "://" + document.getElementById("api-host").value + "/websocket/" + document.getElementById("public-key").value;
 
                 if (document.getElementById("use_session").checked) {
                     if (sessionKey.trim() !== "") {
