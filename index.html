@@ -52,36 +52,7 @@
                     <input id="secret-key">
                 </span>
             </div>
-            <div class="ws-param">
-                <span class="ws-param-title">
-                    Login:
-                </span>
-                <span class="ws-param-value-field">
-                    <input id="user-login">
-                </span>
-            </div>
-            <div class="ws-param">
-                <span class="ws-param-title">
-                    Password:
-                </span>
-                <span class="ws-param-value-field">
-                    <input id="user-password">
-                </span>
-            </div>
-            <div class="ws-param">
-                <span class="ws-param-title">
-                    Session key:
-                </span>
-                <span class="ws-param-value-field">
-                    <input id="session-key">
-                </span>
-            </div>
             <hr/>
-            <div class="actions">
-                <button type="submit" id="init-connection" onclick="initWs()">Init WS</button>
-                <span class="vr"></span>
-                <button type="submit" id="close-connection" onClick="closeConnect()">Close WS</button>
-            </div>
         </div>
 
         <div class="data-log island">
@@ -103,6 +74,41 @@
                 <button type="submit" id="sendButton" onClick="postToServer()">Send message</button>
                 <span class="vr"></span>
                 <button type="submit" id="flushLog" onClick="flushLog()">Flush</button>
+            </div>
+        </div>
+
+        <div class="ws-params island session-params ">
+            <div class="island-title">Session parameters</div>
+            <hr/>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    <label><input type="radio" name="session_type" value="user_session" id="user_login" class="radio" checked> <span>Login:</span></label>
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="user-login">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    Password:
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="user-password">
+                </span>
+            </div>
+            <div class="ws-param">
+                <span class="ws-param-title">
+                    <label><input type="radio" name="session_type" value="key_session" id="use_session" class="radio"> <span>Session key:</span></label>
+                </span>
+                <span class="ws-param-value-field">
+                    <input id="session-key">
+                </span>
+            </div>
+            <hr/>
+            <div class="actions">
+                <button type="submit" id="init-connection" onclick="initWs()">Init WS</button>
+                <span class="vr"></span>
+                <button type="submit" id="close-connection" onClick="closeConnect()">Close WS</button>
             </div>
         </div>
     </body>

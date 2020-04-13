@@ -34,7 +34,7 @@ function login(userName, pwd, sessionKey) {
             function (status, data, error) {
                 var url = "ws" + getSslPrefix() + "://" + document.getElementById("api-host").value + "/websocket/" + document.getElementById("public-key").value+"/";
 
-                if (sessionKey !== "") {
+                if (document.getElementById("use_session").checked) {
                     url += sessionKey;
                 } else if (status === 'ok') {
                     url += data['session_key'];

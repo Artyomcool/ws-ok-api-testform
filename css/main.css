@@ -3,6 +3,10 @@
     width: 33%;
 }
 
+.session-params {
+    margin-top: 10px;
+}
+
 .ws-param {
     padding-bottom: 7px;
     display: flex;
@@ -10,7 +14,12 @@
 }
 
 .ws-param > .ws-param-title {
-    width: 15%;
+    width: 25%;
+}
+
+.radio {
+    width: 20px;
+    float: left;
 }
 
 .ws-param > .ws-param-value-field {
